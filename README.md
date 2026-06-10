@@ -1,9 +1,9 @@
-# RADWAVE 
+# RADWAVE
 
 A ransomware **simulation and educational demo** built with Python and Tkinter.  
 Designed for cybersecurity learning — demonstrates file encryption, countdowns, and decryption flow without any C2 or network component.
 
->  **FOR EDUCATIONAL USE ONLY.**  
+> **FOR EDUCATIONAL USE ONLY.**  
 > Do not deploy against systems you do not own. Unauthorized use is illegal.
 
 ---
@@ -14,7 +14,7 @@ Designed for cybersecurity learning — demonstrates file encryption, countdowns
 - **Dual countdown timers** — simulates "pay deadline" and "price increase" pressure
 - **Ransomware-style UI** — dark themed Tkinter GUI mimicking real ransom notes
 - **Password-gated decryption** — correct key restores all files instantly
--  **Safe by design** — no network calls, no C2, no persistence mechanism
+- **Safe by design** — no network calls, no C2, no persistence mechanism
 
 ---
 
@@ -55,9 +55,23 @@ sudo apt install python3-tk
 
 ## Usage
 
+### Run from source
 ```bash
 python radware3.py
 ```
+
+### Run standalone (no dependencies needed)
+Pre-compiled binaries are available in `dist/` — just execute directly:
+
+```bash
+# Linux / Termux (aarch64)
+./dist/radware3
+
+# Windows
+dist\radware3.exe
+```
+
+> No Python installation or `pip install` required. Everything is bundled via PyInstaller.
 
 - **Closing the window** triggers encryption of all files in the current directory  
   (excludes `vlc.py`, `key.key`, `dec.py` and the script itself)
