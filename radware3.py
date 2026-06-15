@@ -172,6 +172,7 @@ def clear_password():
     pw.config(fg=DIM)
 
 def on_login():
+   global State
     if pw.get() == PASSWORD:
         decrypt()
         State = True
@@ -190,15 +191,14 @@ tk.Button(bottom, text="Decrypt", bg=ACCENT, fg="#0f3460", relief=tk.FLAT,
 
 
 # ── Close triggers encryption ──────────────────────────
+def on_close():
+    encrypt()
+    root.destroy()
+
 def Caser():
     if State ==  True:
-       def close():
-          root.destroy()
-       close()
+       root.destroy()
      else:
-       def on_close():
-          encrypt()
-          root.destroy()
        on_close()
 
 root.protocol("WM_DELETE_WINDOW", Caser)
