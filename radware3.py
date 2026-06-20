@@ -172,7 +172,7 @@ def clear_password():
     pw.config(fg=DIM)
 
 def on_login():
-   global State
+    global State
     if pw.get() == PASSWORD:
         decrypt()
         State = True
@@ -198,7 +198,7 @@ def on_close():
 def Caser():
     if State ==  True:
        root.destroy()
-     else:
+    else:
        on_close()
 
 root.protocol("WM_DELETE_WINDOW", Caser)
